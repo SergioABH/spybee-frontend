@@ -38,27 +38,6 @@ Incluye un listado de proyectos, vista en tabla y mapa, panel lateral de resumen
 
 ---
 
-## Estructura del proyecto
-
-src/
-├── app/
-│   └── page.js  
-├── components/
-│   ├── ProjectList.jsx  
-│   ├── Summary.jsx  
-│   ├── Map.jsx  
-│   └── otros componentes  
-├── store/
-│   └── UseProjectsStore.js  
-├── styles/
-│   ├── Layout.module.css  
-│   ├── Summary.module.css  
-│   └── otros estilos  
-└── data/
-    └── projects.json  
-
----
-
 ## Cómo ejecutar el proyecto
 
 1. Instalar dependencias:
@@ -71,3 +50,23 @@ src/
    http://localhost:3000
 
 ---
+
+## Estructura del proyecto
+
+```text
+src/
+├── app/
+│   └── page.js
+├── components/
+│   ├── ProjectList.jsx
+│   ├── Summary.jsx
+│   ├── Map.jsx
+│   └── otros componentes
+├── store/
+│   └── UseProjectsStore.js
+├── styles/
+│   ├── Layout.module.css
+│   ├── Summary.module.css
+│   └── otros estilos
+└── data/
+    └── projects.json
