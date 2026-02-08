@@ -26,7 +26,7 @@ export default function AppHeader() {
       <div className={styles.appWrapper}>
         {/* Logo */}
         <Image
-          src="/logo-spybee.png"
+          src="/Logo-Spybee.png"
           alt="Spybee"
           width={120}
           height={48}
