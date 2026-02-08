@@ -1,0 +1,26 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Previene zoom en móvil al hacer tap en inputs */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f5f6f8;
+  color: #222;
+  overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+/* Utilities responsive globales */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduce tamaño base en móvil */
+  }
+}

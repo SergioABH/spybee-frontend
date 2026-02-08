@@ -1,0 +1,294 @@
+.projectItem {
+  display: grid;
+  grid-template-columns: 3fr 1.2fr 1fr 2fr 2fr 40px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  position: relative;
+  background-color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.projectItem * {
+  cursor: pointer;
+}
+
+.projectItem:hover {
+  background-color: #fafafa;
+  transform: translateY(-1px);
+}
+
+.projectItem:last-child {
+  border-bottom: none;
+}
+
+.projectItem.highlighted::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #ff6b35;
+}
+
+.projectInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projectImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  background-color: #f0f0f0;
+  flex-shrink: 0;
+}
+
+.projectText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projectName {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d2d2d;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projectIcon {
+  width: 14px;
+  height: 14px;
+  color: #1976d2;
+}
+
+.projectDates {
+  font-size: 12px;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dateIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.planBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.planBadge.pequeno {
+  background-color: #ff6b35;
+  color: #ffffff;
+}
+
+.planBadge.avanzado {
+  background-color: #757575;
+  color: #ffffff;
+}
+
+.planBadge.premium {
+  background-color: #ffc107;
+  color: #2d2d2d;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.statusBadge.activo {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusBadge.inactivo {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.teamAvatars {
+  display: flex;
+  align-items: center;
+  gap: -8px;
+}
+
+.avatar {
+  width: 36px;
+  height: 32px;
+  background-color: var(--avatar-color);
+  color: #2d2d2d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+  position: relative;
+  margin-left: -8px;
+  transition: transform 0.15s ease;
+
+  clip-path: polygon(
+    0% 25%,
+    0% 75%,
+    50% 100%,
+    100% 75%,
+    100% 25%,
+    50% 0%
+  );
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar:hover {
+  transform: translateY(-2px);
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.itemsColumn {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.itemGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.itemCount {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.itemLabel {
+  font-size: 11px;
+  color: #999999;
+}
+
+.actionsColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #999999;
+  transition: color 0.2s ease;
+}
+
+.menuButton:hover {
+  color: #2d2d2d;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projectItem {
+    grid-template-columns: 2.5fr 1fr 1fr 1.5fr 1.5fr 40px;
+    padding: 16px;
+  }
+
+  .projectName {
+    font-size: 14px;
+  }
+
+  .itemsColumn {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .itemGroup {
+    flex-direction: row;
+    gap: 4px;
+    align-items: baseline;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectItem {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .projectItem.highlighted::before {
+    left: 0;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+  }
+
+  .projectInfo,
+  .planBadge,
+  .statusBadge,
+  .teamAvatars,
+  .itemsColumn,
+  .actionsColumn {
+    grid-column: 1;
+  }
+
+  .itemsColumn {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .actionsColumn {
+    justify-content: flex-end;
+  }
+}
+
+.avatarTone1 {
+  --avatar-color: #fff6cc;
+}
+
+.avatarTone2 {
+  --avatar-color: #ffec99;
+}
+
+.avatarTone3 {
+  --avatar-color: #ffe066;
+}
+
+.avatarTone4 {
+  --avatar-color: #ffd43b;
+}
+
+.avatarTone5 {
+  --avatar-color: #fcc419;
+}
